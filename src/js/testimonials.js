@@ -58,15 +58,16 @@
   const container = document.getElementById('testimonialsCarousel');
   let idx = 0, timer;
 
-  data.forEach((item, i) => {
+   data.forEach((item, i) => {
     const div = document.createElement('div');
     div.className = 'testimonial-item';
    div.innerHTML = `
   <p class="header">
     <img
-      src="../../assets/images/elements/usuario.png"
+      src="./assets/images/elements/usuario.png"
       alt="Usuario"
       class="icon icon-user"
+      onerror="this.onerror=null; this.src='/WBRICH.landing1.site/assets/images/elements/usuario.png'; console.log('Intentando ruta alternativa');"
     />
     ${item.name.trim()}
     <span class="time">${item.time}</span>

@@ -64,7 +64,7 @@
    div.innerHTML = `
   <p class="header">
     <img
-      src="/assets/images/elements/usuario.png"
+      src="./assets/images/elements/usuario.png"
       alt="Usuario"
       class="icon icon-user"
     />

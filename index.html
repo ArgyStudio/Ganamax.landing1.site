@@ -239,7 +239,7 @@ const name = (document.getElementById('username') && document.getElementById('us
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ subdomain: 'ganamax', fbc, fbp })
+      body: JSON.stringify({ subdomain: 'ganamax', fbc, fbp,  pixel_id: PIXEL_ID })
     }
   );
   if (!resp.ok) throw new Error(`LineManager error: ${resp.status}`);
@@ -255,7 +255,8 @@ if (allowTracking) {
     uuid,
     name,
     timestamp: new Date().toISOString(),
-    subdomain: 'ganamax'
+    subdomain: 'ganamax',
+    pixel_id: PIXEL_ID, //
   };
   fetch(SECONDARY_API, {
     method: 'POST',
@@ -265,7 +266,7 @@ if (allowTracking) {
 }
 
 
-    const msg = `Hola GANAMAX, vengo por el bono de bienvenida! Mi código promocional es: ${uuid}`;
+    const msg = `Hola GANAMAX! vengo por el bono de bienvenida, Mi código promocional es: ${uuid}`;
 
     window.location.href = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
   });
